@@ -32,12 +32,9 @@ class Nucleotide
     if @dna == ''
       @dna
     else
-      # validator = @dna
-      invalid = []
       @dna.each do |val|
-        invalid << val if !CODE.include?(val)
+        raise ArgumentError.new('Incorrect Nucleotide sequence detected') if !CODE.include?(val)
       end
-      raise ArgumentError.new('Incorrect Nucleotide sequence detected') if invalid.length > 0 
     end
   end
 end
