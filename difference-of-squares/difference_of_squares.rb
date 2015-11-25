@@ -1,5 +1,5 @@
 class Squares
-  attr_writer :number
+  attr_reader :number
 
   def initialize(number)
     @number = number
