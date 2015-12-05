@@ -15,5 +15,4 @@ class Anagram
   def sort
     @result = @result.sort
   end
-
 end
