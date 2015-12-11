@@ -17,9 +17,9 @@ class PigLatin
     if @result.length > 0 && word.start_with?("a", "e", "i", "o", "u")
       return @result + "ay" 
     else
-        until @result.start_with?("a", "e", "i", "o", "u")  
-          self.remove_consonant(@result)
-        end 
+      until @result.start_with?("a", "e", "i", "o", "u")  
+        self.remove_consonant(@result)
+      end 
       return @result + "ay"
     end
   end
