@@ -14,10 +14,10 @@ class BinarySearch
 
   def search_for(number)
     raise RuntimeError.new('Invalid request. No such number in data input') if !@ary.include?(number)
-    @ary.index(number) 
+    @ary.index(number)
   end
- 
+
   def middle
-    mid = @ary.length/2
+    @ary.length / 2
   end
 end

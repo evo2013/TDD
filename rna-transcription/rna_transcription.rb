@@ -1,14 +1,11 @@
-require 'pry'
-
 class Complement
-   DNA = {'C' => 'G', 'G' => 'C', 'T' => 'A', 'A' => 'U'}
-   RNA = {'C' => 'G', 'G' => 'C', 'A' => 'T', 'U' => 'A'}
-   VERSION = 2
-
+  DNA = { 'C' => 'G', 'G' => 'C', 'T' => 'A', 'A' => 'U' }
+  RNA = { 'C' => 'G', 'G' => 'C', 'A' => 'T', 'U' => 'A' }
+  VERSION = 2
 
   def self.of_dna(str)
-    self.dna_validate(str)
-    transcription  = ''   
+    dna_validate(str)
+    transcription = ''
     str.each_char do |s|
       transcription << DNA[s]
     end
@@ -16,8 +13,8 @@ class Complement
   end
 
   def self.of_rna(str)
-    self.rna_validate(str)
-    rna_transcription  = ''         
+    rna_validate(str)
+    rna_transcription = ''
     str.each_char do |s|
       rna_transcription << RNA[s]
     end
@@ -38,4 +35,3 @@ class Complement
     end
   end
 end
-

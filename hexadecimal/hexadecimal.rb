@@ -3,7 +3,7 @@ class Hexadecimal
     hex_numbers = []
     @hex_values = hex_values.chars
     @hex_values.each do |hex|
-      if hex.to_i.to_s ==  hex   
+      if hex.to_i.to_s == hex
         hex_numbers << hex.to_i
       elsif hex == "a"
         hex_numbers << 10
@@ -27,17 +27,17 @@ class Hexadecimal
       @hex_numbers = hex_numbers.reverse
     else
       @hex_numbers = [0]
-    end 
+    end
   end
 
   def to_decimal
-    result = [] 
+    result = []
     @power = -1
-      @hex_numbers.each do |num|
-        convert_decimal = num * (16 ** (@power + 1))
-        result << convert_decimal
-        @power += 1
-      end
-      @result = result.inject { |sum, n| sum + n } 
+    @hex_numbers.each do |num|
+      convert_decimal = num * (16**(@power + 1))
+      result << convert_decimal
+      @power += 1
+    end
+    @result = result.inject { |sum, n| sum + n }
   end
 end

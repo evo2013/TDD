@@ -1,25 +1,17 @@
 class Queens
+  attr_reader :white, :black
 
   def initialize(coordinates = {})
-    @white = coordinates.fetch(:white, [0, 3] )
-    @black = coordinates.fetch(:black, [7, 3] )
+    @white = coordinates.fetch(:white, [0, 3])
+    @black = coordinates.fetch(:black, [7, 3])
     raise ArgumentError.new('Both queens cannot occupy the same space') if @white == @black
   end
 
-  def white
-    @white
-  end
-
-  def black
-    @black
-  end
-
   def to_s
-  matrix = Array.new(8) { Array.new(8) }
-
+    matrix = Array.new(8) { Array.new(8) }
     (0..7).each do |row|
       (0..7).each do |col|
-         matrix[row][col] = "_"
+        matrix[row][col] = "_"
         if [row, col] == white
           matrix[row][col] = "W"
         elsif [row, col] == black
@@ -27,7 +19,6 @@ class Queens
         end
       end
     end
-
     matrix.map { |row| row.join(' ') }.join("\n")
   end
 
@@ -43,4 +34,3 @@ class Queens
     end
   end
 end
-

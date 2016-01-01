@@ -7,7 +7,6 @@ class Nucleotide
     str.each_char do |char|
       @dna << char
     end
-    @dna
     validate_dna
     new(@dna)
   end
@@ -21,11 +20,11 @@ class Nucleotide
   end
 
   def histogram
-    h = {'A' => 0, 'T' => 0, 'C' => 0, 'G'=> 0 }
-    @dna.each do |d| 
-       h[d] += 1
+    h = { 'A' => 0, 'T' => 0, 'C' => 0, 'G' => 0 }
+    @dna.each do |d|
+      h[d] += 1
     end
-    h  
+    h
   end
 
   def self.validate_dna

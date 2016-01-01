@@ -2,19 +2,18 @@ class School
   attr_accessor :students
   VERSION = 1
 
-  def initialize( students={})
+  def initialize(students={})
     @students = students
   end
 
   def to_h
-    @students
     Hash[@students.sort]
   end
 
-  def add(arg1,arg2)
+  def add(arg1, arg2)
     arg1 = [arg1]
     args = Hash[arg2, arg1]
-    @students.merge!(args){|key, val1, val2| [val1, val2].flatten.sort }
+    @students.merge!(args) { |_, val1, val2| [val1, val2].flatten.sort }
     p @students
   end
 
@@ -22,7 +21,7 @@ class School
     if !@students.keys.include?(num)
       @students = []
     else
-      @students = @students.select! { |key, val| num == key }
+      @students = @students.select! { |key, _| num == key }
       @students.values.flatten.sort
     end
   end

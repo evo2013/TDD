@@ -5,7 +5,7 @@ class Sieve
     @limit = limit
   end
 
-  def is_prime?(num)
+  def prime?(num)
     (2...num).each do |divisor|
       return false if num % divisor == 0
     end
@@ -16,7 +16,7 @@ class Sieve
   def primes
     primes = []
     (2...limit).each do |num|
-      primes << num if is_prime?(num)
+      primes << num if prime?(num)
     end
 
     primes

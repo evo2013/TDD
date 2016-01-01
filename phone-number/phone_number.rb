@@ -21,13 +21,13 @@ class PhoneNumber
         arr << char.to_i if char == char.to_i.to_s
       end
     end
-    arr = arr.join 
+    arr = arr.join
   end
 
   def area_code
-    @code = telephone[0..2] 
+    @code = telephone[0..2]
   end
- 
+
   def to_s
     @telephone = telephone[1..10] if telephone.length == 11 && telephone.start_with?("1")
     @telephone = telephone.prepend("(")
