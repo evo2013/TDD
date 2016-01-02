@@ -27,7 +27,7 @@ class YearTest < Minitest::Test
   end
 
   def test_century
-    assert Year.leap?(1900), 'No, 1900 is not a leap year'
+    refute Year.leap?(1900), 'No, 1900 is not a leap year'
   end
 
   def test_fourth_century
