@@ -5,8 +5,6 @@ class Matrix
     rc.each do |item|
       @rows_columns << item.split(" ").map(&:to_i)
     end
-
-    @rows_columns
   end
 
   def rows
