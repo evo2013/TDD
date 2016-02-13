@@ -1,5 +1,4 @@
 class Meetup
-  require 'date'
   TEENTH = [13, 14, 15, 16, 17, 18, 19]
   DAYS_IN_MONTH = [nil, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
   CARDINALS = { first: 0, second: 1, third: 2, fourth: 3, last: -1 }
