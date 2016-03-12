@@ -3,7 +3,7 @@ class School
   VERSION = 1
 
   def initialize(students={})
-    @students = students
+   @students = students
   end
 
   def to_h
@@ -14,7 +14,6 @@ class School
     arg1 = [arg1]
     args = Hash[arg2, arg1]
     @students.merge!(args) { |_, val1, val2| [val1, val2].flatten.sort }
-    p @students
   end
 
   def grade(num)
