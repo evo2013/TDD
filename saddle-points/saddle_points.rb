@@ -23,7 +23,7 @@ class Matrix
         @col_idx = c_idx if col.include?(biggest_num) && biggest_num <= col.min
       end
       list = [] if @col_idx.nil?
-      list << [idx, @col_idx] if !@col_idx.nil && biggest_num <= columns[@col_idx].min
+      list << [idx, @col_idx] if !@col_idx.nil? && biggest_num <= columns[@col_idx].min
     end
     list
   end
