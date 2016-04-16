@@ -1,11 +1,7 @@
 class WordProblem
   def initialize(str)
     @str = str.gsub(/[?]/, "").split(" ")
-    @operands = @str.select { |op| op == "plus" || 
-                                   op == "minus" || 
-                                   op == "multiplied" || 
-                                   op == "divided" 
-                            }
+    @operands = @str.select { |op| op == "plus" || op == "minus" || op == "multiplied" || op == "divided" }
     fail ArgumentError.new("Unrecognized operation.") if @operands.count == 0
   end
 
